@@ -1,0 +1,363 @@
+@charset "uft-8";
+
+/* 외부파일 import */
+@import url(root_style.css);
+
+.row_c {
+    max-width: 1520px;
+    margin: 0 auto;
+}
+
+/* header */
+header {
+    height: 100px;
+    background: #f5f0e9;
+    padding-top: 25px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 500;
+}
+#logo {
+    width: 25%;
+}
+#logo img {
+    width: 100%;
+}
+#mb_btn {
+    width: 50px;
+    height: 40px;
+    background: url(../img/navi_m.png) no-repeat 0 0px;
+    display: none;
+}
+#mb_navi {
+    position: fixed;
+    right: -100%;
+    width: 70%;
+    background: #f5f0e9;
+    height: 100%;
+    top: 0;
+    z-index: 501;
+    overflow: auto;
+}
+#mb_navi_bg {
+    position: fixed;
+    right:-100%; /* 0: 화면에 들어옴 -100%: 화면에서 나감 */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 500;
+}
+.mb_close {
+    width: 50px;
+    height: 40px;
+    background: url(../img/navi_m.png) no-repeat 0 -40px;
+    margin: 15px 0 0 15px;
+}
+#navi_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#navi {
+    flex-grow: 1;
+}
+#navi .main_navi {
+    display: flex;
+}
+#navi .main_navi > li {
+    width: 20%;
+    position: relative;
+    text-align: center;
+}
+#navi .main_navi > li > a {
+    display: block;
+    text-align: center;
+    height: 65px;
+    line-height: 65px;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'SCoreDream', sans-serif;
+    transition: 0.2s ease-out;
+}
+#navi .sub_navi {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 101;
+    height: 220px;
+    width: 100%;
+    display: none;
+}
+#navi .sub_navi ul li a {
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 10px;
+    font-size: 16px;
+    color: var(--wcolor);
+}
+#login a {
+    color: #aaa;
+    font-size: 13px;
+    display: block;
+}
+#navi_bg {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    background: #d8b1a2;
+    height: 220px;
+    top: 100px;
+    display: none;
+}
+
+/* footer */
+footer {
+    background: var(--bgcolor);
+    padding: 80px 0;
+}
+footer > div {
+    display: flex;
+    justify-content: space-between;
+}
+#f_mid {
+    flex-grow: 1;
+    margin-left: 50px;
+}
+#f_mid nav ul {
+    display: flex;
+    margin-bottom: 50px;
+}
+#f_mid nav ul li {
+    margin: 0 20px;
+    position: relative;
+}
+#f_mid nav ul li:first-child {
+    margin-left: 0;
+}
+#f_mid nav ul li::after, #f_mid > ul > li span::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    height: 20px;
+}
+#f_mid nav ul li::after {
+    right: -20px;
+    border-right: 1px solid #ddd;
+}
+#f_mid nav ul li:last-child::after {
+    border: 0;
+}
+#f_mid nav ul li a {
+    color: #ddd;
+}
+#f_mid > ul > li {
+    color: #ccc;
+}
+#f_mid > ul > li span {
+    position: relative;
+    margin-right: 30px;
+}
+#f_mid > ul > li span::after {
+    right: -15px;
+    border-right: 1px solid #ccc;
+}
+#f_mid > ul > li span:last-child::after {
+    display: none;
+}
+#f_right {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+#f_right ul {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+#f_right .sns ul li {
+    margin-left: 20px;
+}
+#f_right .f_btn ul li {
+    margin-left: 10px;
+}
+.f_btn ul li a {
+    display: block;
+    width: 150px;
+    border-radius: 25px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    background: #7a5c50;
+    font-family: 'SCoreDream', sans-serif;
+    font-weight: 600;
+    color: var(--wcolor);
+}
+
+
+/* 공통 css */
+.title {
+    font-weight: bold;
+    font-size: 35px;
+    font-family: 'SCoreDream', sans-serif;
+}
+.pd {
+    padding: 150px 0;
+}
+.pdt {
+    padding-top: 150px;
+}
+.pdb {
+    padding-bottom: 150px;
+}
+
+/* 반응형 스타일 */
+@media screen and (min-width: 768px) {
+    #navi .main_navi > li:hover > a {
+        color: var(--pcolor);
+    }
+    #navi .sub_navi ul li a:hover {
+        color: var(--pcolor);
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    footer > div {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    #f_mid {
+        width: 100%;
+        margin-left: 0;
+        order: 1;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 1520px) {
+    .row_c {
+        padding: 0 4%;
+    }
+}
+
+@media screen and (max-width: 890px) {
+    header {
+        height: 80px;
+    }
+    #navi_wrap {
+        justify-content: space-between;
+    }
+    #logo {
+        flex-grow: 1;
+        margin-right: 20px;
+    }
+    #logo img {
+        max-width: 230px;
+    }
+    #mb_btn {
+        display: block;
+    }
+    #mb_top_btn span {
+        font-size: 35px;
+    }
+    #mb_btn {
+        cursor: pointer;
+        margin-left: 10px;
+    }
+    .mb_close {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    #login {
+        display: none;
+    }
+
+    /* 복제된 모바일 메뉴 스타일 */
+    .mb_navi_wrap .main_navi > li > a {
+        display: block;
+        padding-left: 10px;
+        height: 50px;
+        line-height: 50px;
+        color: #f5f0e9;
+        background: #987b6a;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .mb_navi_wrap .main_navi > li .sub_navi {
+        display: none;
+    }
+    .mb_navi_wrap .main_navi > li .sub_navi ul li a {
+        display: block;
+        background: #f5f0e9;
+        padding-left: 10px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    /* pc 스타일 */
+    #navi {
+        display: none;
+    }
+}
+@media screen and (max-width: 600px) {
+    footer > div {
+        display: block;
+    }
+    #f_logo img {
+        width: 40%;
+    }
+    #f_mid {
+        margin-top: 30px;
+    }
+    #f_right {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+    #f_right ul {
+        justify-content: flex-start;
+    }
+    #f_right ul li:first-child {
+        margin-left: 0;
+    }
+    .f_btn ul li a {
+        width: 130px;
+    }
+}
+
+@media screen and (max-width:450px) {
+
+    #f_mid nav ul {
+        display: block;
+    }
+    #f_mid nav ul li {
+        margin: 0;
+    }
+    #f_mid nav ul li::after {
+        display: none;
+    }
+    
+    /* 공통 css */
+    .title {
+        font-size: 30px;
+    }
+    .text {
+        font-size: 15px;
+    }
+    .pd {
+        padding: 80px 0;
+    }
+    .pdt {
+        padding-top: 80px;
+    }
+    .pdb {
+        padding-bottom: 80px;
+    }
+}

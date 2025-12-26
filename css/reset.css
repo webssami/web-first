@@ -1,0 +1,36 @@
+@charset "uft-8";
+
+/* 초기화 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 18px "Noto Sans KR", sans-serif;
+    color: #333;
+    word-break: keep-all;
+    font-weight: 300;
+    background: #f5f0e9;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+}
+
+/* float 사용하는 경우 부모에 세로길이 적용 clear */
+.clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+}
